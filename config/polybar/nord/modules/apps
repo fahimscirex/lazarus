@@ -1,0 +1,50 @@
+[module/apps]
+type = custom/text
+content-foreground = ${color.GREY}
+content-padding = 0
+content-font = 2
+
+[module/archlinux]
+inherit = module/apps
+content = 
+content-foreground = ${color.GREEN}
+
+[module/term]
+inherit = module/apps
+content-font = 3
+content = 
+click-left = kitty &
+click-right = alacritty &
+
+[module/files]
+inherit = module/apps
+content = 
+content-font = 2
+click-left = pcmanfm &
+
+[module/browser]
+inherit = module/apps
+content = 
+content-font = 2
+click-left = firefox-developer-edition &
+click-right = chromium &
+
+[module/telegram]
+inherit = module/apps
+content = 
+content-font = 2
+click-left = telegram-desktop &
+click-right = caprine &
+
+[module/mail]
+inherit = module/apps
+content = 
+content-font = 2
+click-right = tutanota-desktop &
+click-left = mailspring &
+
+[module/spotify-icon]
+inherit = module/apps
+content = 
+content-font = 3
+click-left = env LD_PRELOAD=/usr/lib/spotify-adblock.so spotify %U &

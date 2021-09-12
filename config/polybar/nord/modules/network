@@ -1,0 +1,29 @@
+[module/network]
+type = internal/network
+interface = enp4s0
+
+interval = 1.0
+
+;;ping-interval = 3
+;;udspeed-minwidth = 5
+
+accumulate-stats = true
+unknown-as-up = true
+
+format-connected = <ramp-signal> <label-connected>
+
+format-disconnected = <label-disconnected>
+format-disconnected-prefix = "睊 "
+format-disconnected-prefix-font = 2
+format-disconnected-prefix-foreground = ${color.RED}
+
+label-connected = "%{A1:nmd &:}%downspeed%%{A}"
+label-disconnected = "%{A1:nmd &:}Disconnected%{A}"
+
+ramp-signal-0 = 直
+ramp-signal-1 = 直
+ramp-signal-2 = 直
+ramp-signal-3 = 直
+ramp-signal-4 = 直
+ramp-signal-font = 2
+ramp-signal-foreground = ${color.CYAN}

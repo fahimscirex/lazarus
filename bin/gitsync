@@ -1,0 +1,49 @@
+#!/bin/bash
+exec 3> /dev/null
+query='{
+	viewer {
+		repositories(isFork:true,first:100) {
+			edges {
+				node {
+					name,
+					nameWithOwner,
+					parent {
+						nameWithOwner
+					}
+				}
+			}
+		}
+	}
+}'
+REPOPATH=(
+	$HOME/git
+)
+filter='.data.viewer.repositories.edges[]|.node| .name+":"+.parent.nameWithOwner +":"+.nameWithOwner'
+while IFS=': ' read -r repo src fork; do
+	for parent in "${REPOPATH[@]}"; do
+		[ -d "$parent/$repo" ] && git -C "$parent/$repo" rev-parse >&3 2>&1 || continue
+		cd "$parent/$repo" || continue
+		current=$(git rev-parse --abbrev-ref HEAD 2>&3)
+		default=$(git remote show origin 2>&3 | grep "HEAD branch" | awk '{print $3}')
+		if [[ $current != "$default" ]]; then
+			git checkout "$default"
+		fi
+		if ! git config remote.upstream.url 2>&1 >&3; then
+			git remote rename origin upstream
+			git remote add origin "https://github.com/$fork.git"
+		fi
+		if [[ $(git config branch.$default.pushremote) != "origin" ]]; then
+			git config branch.$default.pushRemote origin
+		fi
+		git pull --rebase upstream $default
+		git pull --rebase origin $default
+		git push -f origin $default
+		if [[ $current != "$default" ]]; then
+			git checkout "$current"
+		fi
+		cd "$OLDPWD"
+	done
+done < <(
+	curl --disable -s --netrc --data '{"query":"'"${query//[^[:print:] ]/}"'"}' https://api.github.com/graphql \
+		| jq -r "$filter"
+)

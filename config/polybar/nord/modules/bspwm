@@ -1,0 +1,105 @@
+
+[module/bspwm]
+type = internal/bspwm
+
+pin-workspaces = true
+inline-mode = false
+
+enable-click = true
+enable-scroll = true
+reverse-scroll = true
+
+fuzzy-match = true
+
+; ws-icon-[0-9]+ = label;icon
+; Note that the label needs to correspond with the bspwm workspace name
+;;ws-icon-0 = code;♚
+;;ws-icon-1 = office;♛
+;;ws-icon-2 = graphics;♜
+;;ws-icon-3 = mail;♝
+;;ws-icon-4 = web;♞
+;;ws-icon-default = ♟
+
+format = <label-state>
+
+label-monitor = %name%
+
+; If any values for label-dimmed-N are defined, the workspace/mode
+; colors will get overridden with those values if the monitor is out of focus
+; To only override workspaces in a specific state, use:
+;   label-dimmed-focused
+;   label-dimmed-occupied
+;   label-dimmed-urgent
+;   label-dimmed-empty
+;label-dimmed-foreground = ${color.FOREGROUND}
+;label-dimmed-underline = ${color.YELLOW}
+;label-dimmed-focused-background = ${color.BACKGROUND}
+
+label-focused = %name%
+label-focused-foreground = ${color.BACKGROUND}
+label-focused-background = ${color.BLUE}
+;label-focused-underline = ${color.RED}
+label-focused-padding = 1
+
+label-occupied = %name%
+label-occupied-foreground = ${color.BACKGROUND}
+label-occupied-background = ${color.GREEN}
+;label-occupied-underline = ${color.GREEN}
+label-occupied-padding = 1
+
+label-urgent = %name%
+label-urgent-foreground = ${color.BACKGROUND}
+label-urgent-background = ${color.RED}
+;label-urgent-underline = ${color.RED}
+label-urgent-padding = 1
+
+label-empty = %name%
+label-empty-foreground = ${color.FOREGROUND}
+label-empty-padding = 1
+
+; Separator in between workspaces
+label-separator = " "
+label-separator-padding = 0
+;label-separator-foreground = ${color.YELLOW}
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/mod]
+type = internal/bspwm
+
+format = <label-mode>
+format-background = ${color.YELLOW}
+format-foreground = ${color.BACKGROUND}
+format-padding = 1
+
+label-monocle = "Monocle"
+label-tiled = "Tiled"
+
+label-floating = ", Float"
+label-pseudotiled = ", Pseudo"
+label-fullscreen = ", Full"
+
+label-locked = " Locked"
+label-sticky = " Sticky"
+label-private = " Private"
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/modicons]
+type = internal/bspwm
+
+format = <label-mode>
+format-background = ${color.YELLOW}
+format-foreground = ${color.BACKGROUND}
+format-padding = 1
+
+label-monocle = ""
+label-tiled = ""
+
+label-fullscreen = " "
+label-floating = " "
+label-pseudotiled = " "
+
+label-locked = " "
+label-sticky = " "
+label-private = " "

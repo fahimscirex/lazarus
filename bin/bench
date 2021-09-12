@@ -1,0 +1,4 @@
+#!/bin/bash
+for s in bash zsh fish; do 
+	hyperfine --warmup 3 "$s -i -c 'exit 0'"
+done

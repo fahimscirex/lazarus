@@ -1,0 +1,58 @@
+
+#: Font
+font_family Iosevka Fixed
+font_size 11.0
+
+#: Cursor
+cursor_shape underline
+
+#: URL
+url_prefixes http https file ftp gemini irc gopher mailto news git
+open_url_with firefox
+detect_urls yes
+
+#: Window
+initial_window_width  640
+initial_window_height 400
+placement_strategy center
+window_padding_width 2
+map ctrl+alt+enter    launch --cwd=current
+map ctrl+shift+q close_window
+map ctrl+shift+] next_window
+map ctrl+shift+[ previous_window
+map ctrl+shift+right next_tab
+map ctrl+shift+left previous_tab
+map ctrl+shift+t new_tab
+map ctrl+shift+w close_tab
+map ctrl+shift+r start_resizing_window
+
+#: Color Scheme > https://git.io/nord
+foreground #d8dee9
+background #2e3440
+cursor #d8dee9
+
+color0 #3b4252
+color1 #bf616a
+color2 #a3be8c
+color3 #ebcb8b
+color4 #81a1c1
+color5 #b48ead
+color6 #88c0d0
+color7 #e5e8f0
+
+color8 #4c566a
+color9 #bf616a
+color10 #a3be8c
+color11 #ebcb8b
+color12 #81a1c1
+color13 #b48ead
+color14 #8fbcbb
+color15 #eceff4
+
+#: Clipboard
+map ctrl+shift+c copy_to_clipboard
+map ctrl+shift+v paste_from_clipboard
+map kitty_mod+o pass_selection_to_program firefox
+
+#: Others
+allow_remote_control yes

@@ -1,0 +1,9 @@
+[dotfiles]
+repository = ~/Dotfiles
+packages = ['config']
+ignore = [
+     '.git',
+     '.gitignore',
+     '*.swp',
+     'watch_later',
+     'shaders']

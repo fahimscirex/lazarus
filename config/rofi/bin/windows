@@ -1,0 +1,5 @@
+#!/bin/sh
+
+DIR="$HOME/.config/rofi/$ROFITHEME"
+
+rofi -no-lazy-grab -show window -theme $DIR/window.rasi

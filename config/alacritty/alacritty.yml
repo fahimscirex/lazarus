@@ -1,0 +1,108 @@
+# Cursor
+cursor:
+  text:   CellBackground
+  cursor: CellForeground
+  vi_mode_cursor:
+    text:   CellBackground
+    cursor: CellForeground
+  style:
+    shape: Beam
+
+# Colors (Nord)
+colors:
+  # Default colors
+  primary:
+    background: '0x2E3440'
+    foreground: '0xD8DEE9'
+
+  # Normal colors
+  normal:
+    black:   '0x3B4252'
+    red:     '0xBF616A'
+    green:   '0xA3BE8C'
+    yellow:  '0xEBCB8B'
+    blue:    '0x81A1C1'
+    magenta: '0xB48EAD'
+    cyan:    '0x88C0D0'
+    white:   '0xE5E9F0'
+
+  # Bright colors
+  bright:
+    black:   '0x4C566A'
+    red:     '0xBF616A'
+    green:   '0xA3BE8C'
+    yellow:  '0xEBCB8B'
+    blue:    '0x81A1C1'
+    magenta: '0xB48EAD'
+    cyan:    '0x8FBCBB'
+    white:   '0xECEFF4'
+
+window:
+  dynamic_padding: false
+  startup_mode: Windowed
+  decorations: None
+  padding:
+    x: 10
+    y: 12
+  dimensions:
+    columns: 80
+    lines: 19
+  class:
+    instance: alacritty
+    general: alacritty
+
+
+font:
+  size: 12
+  family: Iosevka Fixed
+  offset:
+    x: 0 
+    y: 0
+  normal:
+    family: Iosevka Fixed
+    style: regular
+
+
+mouse_bindings:
+  - { mouse: Middle, action: PasteSelection }
+
+mouse:
+  double_click: { threshold: 300 }
+  triple_click: { threshold: 300 }
+  hide_when_typing: false
+
+selection:
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>"
+
+  # clipboard.
+  save_to_clipboard: false
+
+dynamic_title: true
+
+live_config_reload: true
+
+shell:
+  program: /usr/bin/fish
+
+key_bindings:
+  - { key: V,         mods: Control|Shift,                    action: Paste          }
+  - { key: C,         mods: Control|Shift,                    action: Copy           }
+  - { key: L,         mods: Control,                    action: ClearLogNotice }
+  - { key: L,         mods: Control, mode: ~Vi|~Search, chars: "\x0c"          }
+  - { key: PageUp,    mods: Shift,   mode: ~Alt,        action: ScrollPageUp,  }
+  - { key: PageDown,  mods: Shift,   mode: ~Alt,        action: ScrollPageDown }
+  - { key: Home,      mods: Shift,   mode: ~Alt,        action: ScrollToTop,   }
+  - { key: End,       mods: Shift,   mode: ~Alt,        action: ScrollToBottom }
+  
+# Search Mode
+  - { key: Return,                mode: Search|Vi,  action: SearchConfirm         }
+  - { key: Escape,                mode: Search,     action: SearchCancel          }
+  - { key: C,      mods: Control, mode: Search,     action: SearchCancel          }
+  - { key: U,      mods: Control, mode: Search,     action: SearchClear           }
+  - { key: W,      mods: Control, mode: Search,     action: SearchDeleteWord      }
+  - { key: P,      mods: Control, mode: Search,     action: SearchHistoryPrevious }
+  - { key: N,      mods: Control, mode: Search,     action: SearchHistoryNext     }
+  - { key: Up,                    mode: Search,     action: SearchHistoryPrevious }
+  - { key: Down,                  mode: Search,     action: SearchHistoryNext     }
+  - { key: Return,                mode: Search|~Vi, action: SearchFocusNext       }
+  - { key: Return, mods: Shift,   mode: Search|~Vi, action: SearchFocusPrevious   }

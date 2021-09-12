@@ -1,0 +1,40 @@
+#!/bin/bash
+
+DIR="$HOME/.config/rofi/$ROFITHEME"
+
+rofi_command="rofi -theme $DIR/asroot.rasi"
+
+# Apps
+terminal=" Kitty"
+files=" Pcmanfm"
+editor=" Gedit"
+clifm=" Ranger"
+lpad=" Gedit"
+vim=" Vim"
+
+# Variable passed to rofi
+options="$terminal\n$files\n$editor\n$clifm\n$lpad\n$vim"
+
+chosen="$(echo -e "$options" | $rofi_command -p "Run as root(#)" -dmenu -selected-row 0)"
+case $chosen in
+    $terminal)
+        apps_as_root 'kitty'
+        ;;
+    $files)
+        apps_as_root 'dbus-run-session pcmanfm'
+        ;;
+    $editor)
+        apps_as_root gedit
+        ;;
+    $clifm)
+        apps_as_root 'kitty -e ranger'
+        ;;
+    $lpad)
+        apps_as_root leafpad
+        ;;
+    $vim)
+        apps_as_root 'kitty -e vim'
+        ;;
+esac
+
+

@@ -1,0 +1,76 @@
+conky.config = {
+-- **********************************************************************
+-- "CPU Panel (8-core)" theme for Conky by Tony George (teejee2008@gmail.com)
+
+-- Webpage: http://teejeetech.blogspot.in/
+-- **********************************************************************
+
+
+	background = true,
+	double_buffer = true,
+
+	alignment = 'middle_left',
+
+	border_width = 1,
+	cpu_avg_samples = 2,
+	default_color = 'white',
+	default_outline_color = 'white',
+	default_shade_color = 'white',
+	draw_borders = false,
+	draw_graph_borders = true,
+	draw_outline = false,
+	draw_shades = false,
+
+	gap_x = 50,
+	gap_y = 20,
+	net_avg_samples = 2,
+	no_buffers = true,
+	out_to_console = false,
+	out_to_stderr = false,
+	extra_newline = false,
+
+	own_window = true,
+	own_window_type = 'desktop',
+	own_windows_class = 'conky',
+	own_window_transparent = true,
+	own_window_colour = '000000',
+	own_window_argb_visual = true,
+	own_window_argb_value = 0,
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+
+	minimum_width = 200, minimum_height = 0,
+	stippled_borders = 0,
+	update_interval = 2.0,
+	uppercase = false,
+	use_spacer = 'none',
+
+	show_graph_scale = false,
+	show_graph_range = false,
+
+	use_xft = true,
+	xftalpha = 0.1,
+	font = 'Iosevka Fixed:size=11',
+	font0 = 'Iosevka Fixed:Bold:size=11',
+	color0 = '#EFE2D4',
+	color1 = '#EAEAEA',
+	color2 = '#81A1C1',
+
+};
+
+conky.text = [[
+${font0}${color2}CPU ${color0}${alignr}${cpu cpu0}%
+${cpubar cpu0 5,}
+${top name 1} $alignr ${top cpu 1}%
+${top name 2} $alignr ${top cpu 2}%
+${top name 3} $alignr ${top cpu 3}%
+${top name 4} $alignr ${top cpu 4}%
+${top name 5} $alignr ${top cpu 5}%
+
+${font0}${color2}RAM ${color0}${alignr}${mem}
+${membar 5,}
+${top_mem name 1} $alignr ${top_mem mem_res 1}
+${top_mem name 2} $alignr ${top_mem mem_res 2}
+${top_mem name 3} $alignr ${top_mem mem_res 3}
+${top_mem name 4} $alignr ${top_mem mem_res 4}
+${top_mem name 5} $alignr ${top_mem mem_res 5}
+]];

@@ -1,0 +1,15 @@
+[user]
+	email = fahimscirex@tutanota.com
+	name = fahimscirex
+	signingkey = 8D42DBBE3E1B938E
+[commit]
+	gpsign = true
+[credential]
+	helper = /usr/lib/git-core/git-credential-libsecret
+	helper = 
+	helper = /usr/bin/git-credential-manager-core
+	credentialStore = cache
+[credential "https://dev.azure.com"]
+	useHttpPath = true
+[rebase]
+	autoStash = true

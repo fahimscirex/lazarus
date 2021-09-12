@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+## rofi sudo askpass helper
+export SUDO_ASKPASS=~/.bin/askpass
+
+## execute the application
+sudo -A $1

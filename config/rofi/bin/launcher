@@ -1,0 +1,5 @@
+#!/bin/bash
+
+DIR="$HOME/.config/rofi/$ROFITHEME"
+
+rofi -no-lazy-grab -show drun -theme $DIR/launcher.rasi
