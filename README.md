@@ -109,7 +109,7 @@
 
 > Fish will be the default shell for Alacritty and zsh will be the default user shell.
 
-> I've edited `/etc/lxdm/Xsession` per my needs. If your DM uses `.xinitrc` or `.xsession` by default you won't have to edit Xsession.
+> I've edited `/etc/lxdm/Xsession` per my needs. If your DM uses `.xinitrc` or `.xsession` by default, you won't have to edit Xsession.
 
 > Use your own OpenWeather API and city ID in conky config.
 
