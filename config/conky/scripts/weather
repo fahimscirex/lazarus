@@ -9,10 +9,10 @@
 # Addy
 
 # Open Weather Map API code, register to http://openweathermap.org to get one ;)
-API_KEY="2d4853a686162f9a9057e1db1d7dad9b"
+API_KEY="2d485xxxxxxxxxxxxxxxx"
 
 # Check on http://openweathermap.org/find
-CITY_ID="1185241"
+CITY_ID="11xxxxxx"
 
 ICON_SUNNY="  Clear"
 ICON_CLOUDY="  Cloudy"
