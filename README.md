@@ -86,7 +86,7 @@
 
 | Key                               | Description                              |
 | --------------------------------- | ---------------------------------------- |
-| ctrl + r                          | Reload bspwm                             |
+| ctrl + alt + r                    | Reload bspwm                             |
 | super + esc                       | Reload keybindings                       |
 | super                             | App launcher                             |
 | super + x                         | Powermenu                                |
